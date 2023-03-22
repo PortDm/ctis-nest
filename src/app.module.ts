@@ -3,23 +3,27 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ENVERONMENTS } from './enveronments';
-import { GroupsEntity } from './groups/groups.entity';
-import { GroupsModule as GroupsModule } from './groups/groups.module';
-import { GroupsService } from './groups/groups.service';
-import { LogsEntity } from './logs/logs.entity';
-import { LogsModule } from './logs/logs.module';
-import { PasswordsEntity } from './passwords/passwords.entity';
-import { PasswordsModule } from './passwords/passwords.module';
-import { TokensEntity } from './tokens/tokens.entity';
-import { TokensModule } from './tokens/tokens.module';
-import { UsersCreateDto } from './users/users.dto';
-import { UsersEntity } from './users/users.entity';
-import { UsersModule } from './users/users.module';
-import { UsersCrudService } from './users/users-crud.service';
-import { DevicesEntity } from './devices/devices.entity';
-import { DevicesModule } from './devices/devices.module';
-import { ConcsEntity } from './conclusions/concs.entity';
-import { ConcsModule } from './conclusions/concs.module';
+import { GroupsEntity } from './admin/groups/groups.entity';
+import { GroupsModule } from './admin/groups/groups.module';
+import { GroupsService } from './admin/groups/groups.service';
+import { LogsEntity } from './admin/logs/logs.entity';
+import { PasswordsEntity } from './admin/passwords/passwords.entity';
+import { TokensEntity } from './admin/tokens/tokens.entity';
+import { UsersEntity } from './admin/users/users.entity';
+import { UsersModule } from './admin/users/users.module';
+import { UsersCrudService } from './admin/users/users-crud.service';
+import { DevicesEntity } from './deposit/devices/devices.entity';
+import { ConcsEntity } from './deposit/conclusions/concs.entity';
+import { YearsEntity } from './deposit/years/years.entity';
+import { CasesEntity } from './deposit/cases/cases.entity';
+import { VolumnsEntity } from './deposit/volumns/volumns.entity';
+import { ListsEntity } from './deposit/lists/lists.entity';
+import { PointsEntity } from './deposit/points/points.entity';
+import { LogsModule } from './admin/logs/logs-read/logs-read.module';
+import { DepositModule } from './deposit/deposit.module';
+import { ConcsModule } from './deposit/conclusions/concs.module';
+import { DevicesModule } from './deposit/devices/devices.module';
+import { PointsModule } from './deposit/points/points.module';
 
 // create database ctis lc_collate="ru_RU.utf-8" lc_ctype="ru_RU.utf-8" template=template0;
 
@@ -33,23 +37,27 @@ import { ConcsModule } from './conclusions/concs.module';
       password: '1',
       database: 'ctis',
       entities: [
+        GroupsEntity,
         UsersEntity,
         PasswordsEntity,
         TokensEntity,
-        GroupsEntity,
         LogsEntity,
         DevicesEntity,
-        ConcsEntity
+        ConcsEntity,
+        YearsEntity,
+        CasesEntity,
+        VolumnsEntity,
+        ListsEntity,
+        PointsEntity
       ],
       synchronize: true // false to prod
     }),
     UsersModule,
-    PasswordsModule,
-    TokensModule,
     GroupsModule,
     LogsModule,
+    ConcsModule,
     DevicesModule,
-    ConcsModule
+    DepositModule
   ],
   controllers: [AppController],
   providers: [AppService],
@@ -88,4 +96,9 @@ export class AppModule {
         }
       }).catch(() => {})
   }
+
 }
+
+
+
+

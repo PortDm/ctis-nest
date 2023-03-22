@@ -19,7 +19,17 @@ export enum ResoursesAccess {
     DevicesList,
     DevicesCreate,
     DevicesUpdate,
-    DevicesRemove
+    DevicesRemove,
+
+    ConclsList,
+    ConclsCreate,
+    ConclsUpdate,
+    ConclsRemove,
+
+    CasesList,
+    CasesCreate,
+    CasesUpdate,
+    CasesRemove
 }
 
 export const AccessUsersList = [
@@ -38,6 +48,7 @@ export const AccessUsersRemove = [
 
 export const AccessGroupsList = [
     'Administrators'
+    // 'Admin'
 ]
 export const AccessGroupsCreate = [
     'Administrators'
@@ -67,3 +78,30 @@ export const AccessDevicesUpdate = [
 export const AccessDevicesRemove = [
     'Administrators'
 ]
+
+export const AccessConclsList = [
+    'Administrators'
+]
+export const AccessConclsCreate = [
+    'Administrators'
+]
+export const AccessConclsUpdate = [
+    'Administrators'
+]
+export const AccessConclsRemove = [
+    'Administrators'
+]
+
+export const AccessCasesList = [
+    'Administrators'
+]
+export const AccessCasesCreate = [
+    'Administrators'
+]
+export const AccessCasesUpdate = [
+    'Administrators'
+]
+export const AccessCasesRemove = [
+    'Administrators'
+]
+
