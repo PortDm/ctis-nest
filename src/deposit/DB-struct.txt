@@ -1,0 +1,9 @@
+                                 |
+ DEV -> POINT ==> LIST -> CONC  ===>  VOLUME -> CASE -> YEAR
+\------------/   \------------/  |   \----------------------/
+  create Dev       create Conc   |       create Volume
+
+1. Create Conc and Lists
+2. Create Dev and Point and push to List
+---------------------------------------------------
+3. Create Volume (Cases, Years) and push Conc
